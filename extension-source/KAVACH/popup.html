@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAVACH</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <div class="brand">
+        <img class="brand-logo" src="icons/kavach-48.png" alt="KAVACH logo" />
+        <div>
+          <h1>KAVACH</h1>
+          <span class="subtitle">Blocks Risk &gt; 50% Automatically</span>
+        </div>
+      </div>
+      <div class="header-controls">
+        <button id="themeToggle" class="icon-btn" title="Toggle Dark/Light Mode">🌓</button>
+        <label class="switch" title="Enable/Disable Protection">
+          <input type="checkbox" id="protectionToggle" checked />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+
+    <section id="statusCard" class="status-card status-safe">
+      <div class="status-header">
+        <span id="statusBadge" class="status-badge">SAFE</span>
+        <span id="riskScore" class="risk-score">Risk: 0%</span>
+      </div>
+      <div id="currentDomain" class="domain-name">Analyzing...</div>
+      <ul id="reasonsList" class="reasons-list"></ul>
+
+      <div class="domain-actions">
+        <button id="trustSiteBtn" class="btn btn-secondary">Trust This Site</button>
+        <button id="rescanBtn" class="btn btn-outline">Force Rescan</button>
+      </div>
+    </section>
+
+    <section class="settings-panel">
+      <div class="panel-row">
+        <div>
+          <div class="label-title">Cache Layer TTL</div>
+          <div id="cacheStatusText" class="label-sub">Checking cache...</div>
+        </div>
+        <select id="ttlSelect" class="select-input">
+          <option value="5">5 mins</option>
+          <option value="15" selected>15 mins</option>
+          <option value="30">30 mins</option>
+          <option value="60">60 mins</option>
+        </select>
+      </div>
+
+      <div class="panel-row">
+        <div>
+          <div class="label-title">Cached Entries</div>
+          <div id="cacheCountText" class="label-sub">0 domains stored</div>
+        </div>
+        <button id="clearCacheBtn" class="btn btn-danger-outline">Flush Cache</button>
+      </div>
+    </section>
+
+    <section class="allowlist-panel">
+      <div class="label-title">Trusted Allowlist (<span id="allowlistCount">0</span>)</div>
+      <div id="allowlistContainer" class="allowlist-chips"></div>
+    </section>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

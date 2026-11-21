@@ -1,0 +1,246 @@
+:root {
+  --bg-primary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
+  --accent: #2563eb;
+  --safe-bg: #ecfdf5;
+  --safe-border: #10b981;
+  --safe-text: #047857;
+  --warn-bg: #fffbeb;
+  --warn-border: #f59e0b;
+  --warn-text: #b45309;
+  --danger-bg: #fef2f2;
+  --danger-border: #ef4444;
+  --danger-text: #b91c1c;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-card: #1e293b;
+  --bg-subtle: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --accent: #3b82f6;
+  --safe-bg: rgba(16, 185, 129, 0.12);
+  --safe-border: #10b981;
+  --safe-text: #34d399;
+  --warn-bg: rgba(245, 158, 11, 0.12);
+  --warn-border: #f59e0b;
+  --warn-text: #fbbf24;
+  --danger-bg: rgba(239, 68, 68, 0.15);
+  --danger-border: #ef4444;
+  --danger-text: #f87171;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 360px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo { width: 34px; height: 34px; object-fit: contain; flex: 0 0 auto; }
+.brand h1 { font-size: 17px; font-weight: 800; }
+.subtitle { font-size: 11px; color: var(--text-secondary); }
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #94a3b8;
+  border-radius: 22px;
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider { background-color: #10b981; }
+input:checked + .slider:before { transform: translateX(18px); }
+
+.status-card {
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid var(--border-color);
+}
+
+.status-safe { background: var(--safe-bg); border-color: var(--safe-border); }
+.status-warning { background: var(--warn-bg); border-color: var(--warn-border); }
+.status-danger { background: var(--danger-bg); border-color: var(--danger-border); }
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.status-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--bg-card);
+}
+
+.status-safe .status-badge { color: var(--safe-text); }
+.status-warning .status-badge { color: var(--warn-text); }
+.status-danger .status-badge { color: var(--danger-text); }
+
+.risk-score {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.domain-name {
+  font-size: 14px;
+  font-weight: 600;
+  word-break: break-all;
+  margin-bottom: 8px;
+}
+
+.reasons-list {
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding-left: 16px;
+  margin-bottom: 12px;
+}
+
+.reasons-list li { margin-bottom: 4px; }
+.domain-actions { display: flex; gap: 8px; }
+
+.settings-panel, .allowlist-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panel-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-title { font-size: 13px; font-weight: 600; }
+.label-sub { font-size: 11px; color: var(--text-secondary); }
+
+.btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-secondary { background: var(--accent); color: #ffffff; flex: 1; }
+.btn-outline { background: var(--bg-card); border-color: var(--border-color); color: var(--text-primary); }
+.btn-danger-outline { background: transparent; border-color: var(--danger-border); color: var(--danger-text); }
+
+.select-input {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.allowlist-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 75px;
+  overflow-y: auto;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.chip button {
+  background: none;
+  border: none;
+  color: var(--danger-text);
+  cursor: pointer;
+  font-weight: bold;
+}

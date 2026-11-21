@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blocked by KAVACH</title>
+  <link rel="stylesheet" href="blocked.css" />
+</head>
+<body>
+  <div class="quarantine-wrapper">
+    <div class="quarantine-card">
+      <div class="top-bar">
+        <div class="brand">
+          <img class="brand-logo" src="icons/kavach-48.png" alt="KAVACH logo" />
+          <span class="brand-name">KAVACH</span>
+        </div>
+        <button id="themeToggle" class="theme-btn" title="Toggle Dark/Light Mode">🌓</button>
+      </div>
+
+      <div class="alert-pill">
+        BLOCKED • RISK SCORE <span id="riskPercent">0%</span> (THRESHOLD &gt; 50%)
+      </div>
+
+      <h1>Site Blocked for Your Safety</h1>
+      <p class="subtitle">
+        <strong>KAVACH</strong> detected high-risk phishing or security threats on the target URL and prevented it from loading.
+      </p>
+
+      <div class="url-box" id="blockedUrl">Loading URL...</div>
+
+      <div class="reasons-box">
+        <div class="reasons-title">Detected Threat Indicators:</div>
+        <ul id="reasonsList"></ul>
+      </div>
+
+      <div class="actions">
+        <button id="goBackBtn" class="btn-primary">← Go Back to Safety</button>
+        <button id="accessSiteBtn" class="btn-danger-outline">Access the Site</button>
+      </div>
+
+      <div class="trust-footer">
+        <label class="checkbox-label">
+          <input type="checkbox" id="permanentTrustCheck" />
+          <span>Permanently trust this domain in my allowlist</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <script src="blocked.js"></script>
+</body>
+</html>

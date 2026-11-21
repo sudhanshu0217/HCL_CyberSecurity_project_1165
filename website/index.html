@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAVACH – Web Protection Browser Extension</title>
+  <meta name="description" content="KAVACH is a real-time phishing and threat blocker for your browser. It scores every website for risk and blocks anything above 50% before it loads." />
+  <meta name="theme-color" content="#0b2a5b" />
+  <meta property="og:title" content="KAVACH – Web Protection" />
+  <meta property="og:description" content="Blocks risky and phishing websites before they load. Free browser extension." />
+  <meta property="og:image" content="assets/og-icon.png" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="KAVACH home">
+        <img src="assets/logo-shield.png" alt="" width="38" height="38" />
+        <span>KAVACH</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#demo">Try it</a>
+        <a href="#install">Install</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="btn btn-primary btn-sm js-install">Add to Browser</button>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="pill"><i class="dot"></i> Real-time protection · Free</span>
+          <h1>Your shield against <span class="grad">unsafe websites.</span></h1>
+          <p class="lead">
+            KAVACH scores every site you visit for phishing and security risk. Anything above
+            <strong>50%</strong> is blocked <em>before</em> it loads, and you decide if you want to go in.
+          </p>
+          <div class="cta-row">
+            <button class="btn btn-primary btn-lg js-install">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+              Add KAVACH to Browser
+            </button>
+            <a href="#demo" class="btn btn-ghost btn-lg">Try the live demo</a>
+          </div>
+          <ul class="trust">
+            <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Runs locally in your browser</li>
+            <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> No account needed</li>
+            <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Chrome · Edge · Brave</li>
+          </ul>
+        </div>
+
+        <div class="hero-art reveal">
+          <div class="ring r1"></div><div class="ring r2"></div>
+          <img src="assets/logo-full.png" alt="KAVACH Web Protection logo" class="hero-logo" />
+          <div class="float-card fc1"><span class="chip ok">SAFE</span> google.com</div>
+          <div class="float-card fc2"><span class="chip bad">BLOCKED</span> paypa1-login.xyz</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div><b data-count="8">0</b><span>Heuristic checks per URL</span></div>
+        <div><b data-count="50" data-suffix="%">0</b><span>Risk threshold to block</span></div>
+        <div><b data-count="16">0</b><span>Protected brand domains</span></div>
+        <div><b data-count="0">0</b><span>Data sent to any server</span></div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Features</span>
+          <h2>Everything you need to browse with confidence</h2>
+          <p>Built from the ground up to stop phishing, fake login pages and look-alike domains.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="ico i1"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></div>
+            <h3>Auto-block above 50% risk</h3>
+            <p>Dangerous sites are stopped at the network level and replaced with a clear warning page.</p>
+          </article>
+          <article class="card reveal">
+            <div class="ico i2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <h3>Real-time scoring</h3>
+            <p>Every navigation is analysed instantly with a risk engine that returns a 0–100% score.</p>
+          </article>
+          <article class="card reveal">
+            <div class="ico i3"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
+            <h3>Typosquatting detection</h3>
+            <p>Catches fakes like <code>paypa1.com</code> using Levenshtein distance against popular brands.</p>
+          </article>
+          <article class="card reveal">
+            <div class="ico i4"><svg viewBox="0 0 24 24"><path d="M10 14a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1M14 10a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg></div>
+            <h3>Link trick detection</h3>
+            <p>Flags IP-address hosts, <code>@</code> redirects, Punycode look-alike characters and endless subdomains.</p>
+          </article>
+          <article class="card reveal">
+            <div class="ico i5"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></div>
+            <h3>You stay in control</h3>
+            <p>Click <b>Access the Site</b> to continue once, or add trusted domains to your personal allowlist.</p>
+          </article>
+          <article class="card reveal">
+            <div class="ico i6"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+            <h3>Fast &amp; lightweight</h3>
+            <p>Smart TTL cache (5–60 min) means repeat visits are verdicted instantly with no slowdown.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section alt" id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2>From click to verdict in milliseconds</h2>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal"><span class="num">1</span><h3>You open a link</h3><p>KAVACH intercepts the navigation <em>before</em> the page loads.</p></div>
+          <div class="step reveal"><span class="num">2</span><h3>Risk engine scores it</h3><p>8 heuristic checks add up to a risk score from 0 to 100%.</p></div>
+          <div class="step reveal"><span class="num">3</span><h3>Safe? You go through</h3><p>Under 50% the site loads normally, with a badge showing its status.</p></div>
+          <div class="step reveal"><span class="num">4</span><h3>Risky? It's blocked</h3><p>Above 50% you see a warning with every reason found. You decide what next.</p></div>
+        </div>
+
+        <div class="meter-legend reveal">
+          <div class="bar"><span class="g">0–24% Safe</span><span class="y">25–50% Warning</span><span class="r">51–100% Blocked</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE DEMO -->
+    <section class="section" id="demo">
+      <div class="container demo-wrap">
+        <div class="demo-copy reveal">
+          <span class="eyebrow">Live demo</span>
+          <h2>Test the risk engine yourself</h2>
+          <p>This runs the same scoring rules as the extension, right in your browser. Nothing you type is sent anywhere.</p>
+          <div class="samples">
+            <span>Try:</span>
+            <button data-url="https://www.google.com">google.com</button>
+            <button data-url="http://paypal-secure-login.xyz/verify">paypal-secure-login.xyz</button>
+            <button data-url="http://192.168.4.7/account/signin">192.168.4.7</button>
+            <button data-url="https://hdfcbank.co/update-kyc">hdfcbank.co</button>
+          </div>
+        </div>
+
+        <div class="demo-card reveal">
+          <form id="demoForm" class="demo-input" autocomplete="off">
+            <input id="demoUrl" type="text" placeholder="Paste a website address…" spellcheck="false" />
+            <button class="btn btn-primary" type="submit">Scan</button>
+          </form>
+
+          <div class="gauge-box">
+            <svg viewBox="0 0 200 120" class="gauge">
+              <defs>
+                <linearGradient id="gg" x1="0" x2="1">
+                  <stop offset="0" stop-color="#22c55e"/><stop offset=".5" stop-color="#facc15"/><stop offset="1" stop-color="#ef4444"/>
+                </linearGradient>
+              </defs>
+              <path d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="#e3eaf3" stroke-width="16" stroke-linecap="round"/>
+              <path id="gaugeArc" d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="url(#gg)" stroke-width="16" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100"/>
+              <g id="needle" style="transform-origin:100px 100px;transform:rotate(-90deg)">
+                <line x1="100" y1="100" x2="100" y2="34" stroke="#0b2a5b" stroke-width="4" stroke-linecap="round"/>
+              </g>
+              <circle cx="100" cy="100" r="8" fill="#0b2a5b"/>
+            </svg>
+            <div class="gauge-read"><b id="gScore">0%</b><span id="gStatus" class="chip idle">WAITING</span></div>
+          </div>
+
+          <ul id="gReasons" class="reasons"><li class="muted">Enter a URL and press Scan to see the verdict.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTALL -->
+    <section class="section alt" id="install">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Install</span>
+          <h2>Get KAVACH in under a minute</h2>
+          <p>One click on the button below adds KAVACH to your browser.</p>
+        </div>
+
+        <div class="install-card reveal">
+          <div class="install-left">
+            <img src="assets/logo-shield.png" alt="" class="install-shield" />
+            <button class="btn btn-primary btn-lg js-install">Add KAVACH to Browser</button>
+            <a class="dl-link" href="downloads/KAVACH-extension.zip" download>or download the extension (.zip)</a>
+            <small id="browserNote"></small>
+          </div>
+          <div class="install-right">
+            <h3>Manual install (developer mode)</h3>
+            <ol class="manual">
+              <li>Download and <b>unzip</b> <code>KAVACH-extension.zip</code>.</li>
+              <li>Open <code>chrome://extensions</code> (Edge: <code>edge://extensions</code>).</li>
+              <li>Turn on <b>Developer mode</b> (top-right).</li>
+              <li>Click <b>Load unpacked</b> and select the <code>KAVACH</code> folder.</li>
+              <li>Pin the shield icon to your toolbar. You're protected!</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Questions, answered</h2>
+        </div>
+        <div class="faq reveal">
+          <details open><summary>Does KAVACH send my browsing history anywhere?</summary><p>No. All scoring happens locally in your browser. Your cache and allowlist are stored only on your device using browser storage.</p></details>
+          <details><summary>What if a safe website gets blocked?</summary><p>Click <b>Access the Site</b> on the warning page to continue, and tick <b>Permanently trust this domain</b> to add it to your allowlist. You can also use <b>Trust This Site</b> from the toolbar popup.</p></details>
+          <details><summary>Which browsers are supported?</summary><p>Any Chromium-based browser that supports Manifest V3: Google Chrome, Microsoft Edge, Brave, Opera and Vivaldi.</p></details>
+          <details><summary>Can I pause protection?</summary><p>Yes. Use the switch in the popup to pause or resume protection at any time, and change the cache duration from 5 to 60 minutes.</p></details>
+          <details><summary>Why does it need access to all websites?</summary><p>To check each page address before it loads and to show the warning page, KAVACH needs permission to see the URLs you navigate to. It does not read page content or form data.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final">
+      <div class="container final-inner reveal">
+        <h2>Browse boldly. KAVACH has your back.</h2>
+        <p>Add the shield in one click and stop phishing before it starts.</p>
+        <button class="btn btn-light btn-lg js-install">Add KAVACH to Browser</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand"><img src="assets/logo-shield.png" alt="" width="34" height="34" /><span>KAVACH</span></div>
+      <p>© <span id="year"></span> KAVACH Web Protection · <a href="privacy.html" style="text-decoration:underline">Privacy</a></p>
+    </div>
+  </footer>
+
+  <!-- INSTALL MODAL -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <button class="modal-x" id="modalClose" aria-label="Close">×</button>
+      <img src="assets/logo-shield.png" alt="" class="modal-shield" />
+      <h3 id="mTitle">Your download has started</h3>
+      <p class="modal-sub">Finish in 4 quick steps. Takes about 30 seconds.</p>
+      <ol class="modal-steps">
+        <li><b>Unzip</b> the downloaded <code>KAVACH-extension.zip</code></li>
+        <li>Open <button class="copy" data-copy="chrome://extensions" id="copyExt">chrome://extensions</button> <small>(click to copy, then paste in a new tab)</small></li>
+        <li>Switch on <b>Developer mode</b>, then click <b>Load unpacked</b></li>
+        <li>Choose the unzipped <code>KAVACH</code> folder. Done!</li>
+      </ol>
+      <a class="btn btn-ghost btn-sm" href="downloads/KAVACH-extension.zip" download>Download again</a>
+    </div>
+  </div>
+
+  <script src="js/demo.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

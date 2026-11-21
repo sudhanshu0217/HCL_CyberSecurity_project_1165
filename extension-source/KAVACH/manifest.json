@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "KAVACH",
+  "version": "1.0.0",
+  "description": "Real-time phishing & threat blocker that blocks sites scoring >50% risk until you manually click 'Access the Site'.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "webNavigation",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "KAVACH Security Shield"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html",
+        "blocked.css",
+        "blocked.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "icons": {
+    "16": "icons/kavach-16.png",
+    "32": "icons/kavach-32.png",
+    "48": "icons/kavach-48.png",
+    "128": "icons/kavach-128.png"
+  }
+}
